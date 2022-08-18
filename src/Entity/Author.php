@@ -20,7 +20,7 @@ class Author
 
     #[ORM\Column(length: 255)]
     #[Groups(["getBooks", "getAuthors"])]
-    #[Assert\NotBlank(message: "Le prénom de l'autheur(e) est obligatoire")]
+    //#[Assert\NotBlank(message: "Le prénom de l'autheur(e) est obligatoire")]
     #[Assert\Length(min: 1,
         max: 255,
         minMessage: "Le prénom  doit faire au moins {{ limit }} caractères",
@@ -29,7 +29,7 @@ class Author
 
     #[ORM\Column(length: 255)]
     #[Groups(["getBooks", "getAuthors"])]
-    #[Assert\NotBlank(message: "Le Nom de l'autheur(e) est obligatoire")]
+    //#[Assert\NotBlank(message: "Le Nom de l'autheur(e) est obligatoire")]
     #[Assert\Length(min: 1,
         max: 255,
         minMessage: "Le Nom  doit faire au moins {{ limit }} caractères",

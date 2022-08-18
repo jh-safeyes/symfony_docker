@@ -39,6 +39,15 @@ class BookRepository extends ServiceEntityRepository
         }
     }
 
+    //méthode de pagination qui permet de ne renvoyer qu'un certains nombre de livres par pages
+    public function findAllWithPagination($page, $limit)
+    {
+        $qb = $this->createQueryBuilder('b')
+            ->setFirstResult(($page - 1) * $limit)
+            ->setMaxResults($limit);
+        return $qb->getQuery()->getResult();
+    }
+
 //    /**
 //     * @return Book[] Returns an array of Book objects
 //     */
